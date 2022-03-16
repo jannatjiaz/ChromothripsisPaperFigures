@@ -35,8 +35,8 @@ This script requires pandas
 
 We wanted to visulaise how far SV where from genes and whether this affected whether the genes were differential or not. For this we used plotNearestSVdistanceIsoseq.py and plotNearestSVdistancePeaks.py:
 
-python plotNearestSVdistanceIsoseq.py --inputdir outs --outputdir outs
-python plotNearestSVdistancePeaks.py --inputdir outs --outputdir outs
+> python plotNearestSVdistanceIsoseq.py --inputdir outs --outputdir outs
+> python plotNearestSVdistancePeaks.py --inputdir outs --outputdir outs
 
 You need seaborn, scipy, math, pandas and numpy.
 
@@ -44,7 +44,7 @@ You need seaborn, scipy, math, pandas and numpy.
 
 We wanted to see which SV types and sizes were nearest to the to the differential genes and peaks. For this we used plotNearestSVsizeDistributionIsoseq.py and plotNearestSVsizeDistributionPekas.py:
 
-python plotNearestSVsizeDistributionIsoseq.py --inputdir outs/ --outputdir outs/
-python plotNearestSVsizeDistributionPekas.py --inputdir outs/ --outputdir outs/
+> python plotNearestSVsizeDistributionIsoseq.py --inputdir outs/ --outputdir outs/
+> python plotNearestSVsizeDistributionPekas.py --inputdir outs/ --outputdir outs/
 
 You need matplotlib, scipy, pandas and numpy.
