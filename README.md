@@ -5,8 +5,8 @@ Scripts to used for the epigenetic data analysis for the chromothripsis paper. D
 
 After filtering the peaks to remove copy number altered regions, outputs from DESeq2 and DiffBind can be fed directly into allelicFoldChange_isoseq_117_152.py and allelicFoldChange_Chip_ATAC_117_152.pyto see how the distribution of differences between alleles varies in two samples derived from the same donor. Use:
 
-python allelicFoldChange_isoseq_117_152.py --outputdir outs/
-python allelicFoldChange_Chip_ATAC_117_152.py --outputdir outs/
+> python allelicFoldChange_isoseq_117_152.py --outputdir outs/
+> python allelicFoldChange_Chip_ATAC_117_152.py --outputdir outs/
 
 These scirpts require pandas, seaborn, matplotlib, numpy and scipy
 
@@ -14,11 +14,11 @@ These scirpts require pandas, seaborn, matplotlib, numpy and scipy
 
 DESeq2 can output the normalised count martrix and this can be used to determine how expression changes on the alleles over time. This direct alleic comparison can be done by:
 
-python directAllelicComparison_isoseq_117_152.py  --outputdir outs/
+> python directAllelicComparison_isoseq_117_152.py  --outputdir outs/
 
 In order to compare the ChIP and ATAC-seq peaks, samtools was used to determine the coverage at each peak called in the ChIP and ATAC data. For each peak, the number of reads that were present in that region was determined for all ChIP-seq marks and for the ATAC-seq runs. This produced a file where each row was a peak and the columns were representing the counts of each mark at the peak site. From this a direct allelic comparison can be done:
 
-python directAllelicComparison_Chip_ATAC_117_152.py  --outputdir outs/
+> python directAllelicComparison_Chip_ATAC_117_152.py  --outputdir outs/
 
 
 ## Nearest SV to differential genes and peaks
