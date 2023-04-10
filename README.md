@@ -6,6 +6,7 @@ Scripts to used for the epigenetic data analysis for the chromothripsis paper. D
 After filtering the peaks to remove copy number altered regions, outputs from DESeq2 and DiffBind can be fed directly into allelicFoldChange_isoseq_117_152.py and allelicFoldChange_Chip_ATAC_117_152.pyto see how the distribution of differences between alleles varies in two samples derived from the same donor. Use:
 
 > python allelicFoldChange_isoseq_117_152.py --outputdir outs/
+
 > python allelicFoldChange_Chip_ATAC_117_152.py --outputdir outs/
 
 These scirpts require pandas, seaborn, matplotlib, numpy and scipy
