@@ -36,14 +36,15 @@ This script requires pandas
 
 We wanted to visulaise how far SV where from genes and whether this affected whether the genes were differential or not. For this we used plotNearestSVdistancePeaks.py:
 
-> python plotNearestSVdistancePeaks.py --inputdir outs --outputdir outs
+> python plotNearestSv_chipatac_distplot.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput \
+    --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput --on_CT on_CT
 
-You need seaborn, scipy, math, pandas and numpy.
+You need seaborn math, pandas, numpy, collections, matplotlib, pylab, scipy and seaborn.
 
 ### plot SV size of nearest SV (and type)
 
-We wanted to see which SV types and sizes were nearest to the to the differential genes and peaks. For this we used plotNearestSVsizeDistributionPekas.py:
+We wanted to see which what the effect of distance to SV had on the fold change difference in peak height. You need a peak file with a column that annotates which peak is assocated which which histone modification. For this we used plotNearestSv_chipatac_distplot.py:
 
-> python plotNearestSVsizeDistributionPekas.py --inputdir outs/ --outputdir outs/
+plotNearestSv_chipatac_distplot.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput
 
-You need matplotlib, scipy, pandas and numpy.
+You need matplotlib, math, pandas and numpy.
