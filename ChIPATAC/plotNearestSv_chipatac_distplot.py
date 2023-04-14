@@ -12,8 +12,8 @@ import argparse
 plt.rcParams['pdf.fonttype'] = 42
 
 
-parser = argparse.ArgumentParser(description='usage:  plotnearestSVpeaks.py  --chromothriptic_bedpe chromothriptic_bedpe --wild_type_bedpe wild_type_bedpe \
-    --diff_genes diff_genes_input -nondiff_genes nondiff_genes_input --ensemble_info ensemble_input')
+parser = argparse.ArgumentParser(description='usage:  plotNearestSv_chipatac_distplot.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput \
+    --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput --on_CT on_CT')
 parser.add_argument('--differentialPeaksInput', help='path to differential peaks file on the chromosome with peak',required=True)
 parser.add_argument('--nonDifferentialPeaksInput', help='path to non-differential peaks file  on the chromosome with peak',required=True)
 parser.add_argument('--differentialPeaksOtherInput', help='path to differential peaks file on the chromosome with peak',required=True)
