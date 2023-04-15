@@ -8,7 +8,7 @@ plt.rcParams['pdf.fonttype'] = 42
 
 ### CHIP/ATAC
 
-parser = argparse.ArgumentParser(description='usage:  plotNearestSv_chipatac_distplot.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput \
+parser = argparse.ArgumentParser(description='usage:  distance_foldchange_effect.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput \
     --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput')
 parser.add_argument('--differentialPeaksInput', help='path to differential peaks file on the chromosome with peak',required=True)
 parser.add_argument('--nonDifferentialPeaksInput', help='path to non-differential peaks file  on the chromosome with peak',required=True)
