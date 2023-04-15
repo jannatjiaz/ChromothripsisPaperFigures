@@ -4,7 +4,7 @@ import pandas as pd
 import argparse 
 import math
 
-parser = argparse.ArgumentParser(description='usage:  nearestSV.py  --differential differential ')
+parser = argparse.ArgumentParser(description='usage:  nearestSV_chipatac.py  --differential differential ')
 parser.add_argument('--differential', help='differential or nonDifferential',required=True)
 parser.add_argument('--wt_sv_input', help='path to wild-type SVs file',required=True)
 parser.add_argument('--Ct_sv_input', help='path to chromothriptic SVs file',required=True)
