@@ -1,10 +1,10 @@
 # Chromothripsis paper figures 4
 
-This README provides scripts used to make figures used in figure 4. Diffbind was used to proccess the aligned haplotype resovled bam files and the outputs from these were used for plotting puposes. 
+This README provides scripts used to make figures used in figure 4. Diffbind was used to proccess the haplotype resovled bam files containing reads which were explicity assigned to one haplotype over the other. After differential peaks were called, those that were in regions of copy number variation or loss of hetrozygosity were removed as these were differential due to copy number effects. Peaks which were directly bisected by an SV were also removed. The remaining peaks were explored further... 
 
 ## Log2 fold change comparing 117 and 152
 
-After filtering the peaks to remove copy number altered regions, outputs from DiffBind can be fed directly into allelicFoldChange_Chip_ATAC_117_152.py to see how the distribution of differences between alleles varies in two samples derived from the same donor. Use:
+Filtered outputs from DiffBind can be fed directly into allelicFoldChange_Chip_ATAC_117_152.py to see how the distribution of differences between alleles varies in two samples derived from the same donor. Use:
 
 > python allelicFoldChange_Chip_ATAC_117_152.py --outputdir outs/
 
@@ -45,6 +45,6 @@ You need seaborn math, pandas, numpy, collections, matplotlib, pylab, scipy and 
 
 We wanted to see which what the effect of distance to SV had on the fold change difference in peak height. You need a peak file with a column that annotates which peak is assocated which which histone modification. For this we used plotNearestSv_chipatac_distplot.py:
 
-plotNearestSv_chipatac_distplot.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput
+python distance_foldchange_effect.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput
 
 You need matplotlib, math, pandas and numpy.
