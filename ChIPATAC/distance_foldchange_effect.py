@@ -16,13 +16,6 @@ parser.add_argument('--differentialPeaksOtherInput', help='path to differential 
 parser.add_argument('--nonDifferentialPeaksOtherInput', help='path to non-differential peaks file on the chromosome without peak',required=True)
 args = parser.parse_args()
 
-
-differentialPeaksInput = "{}".format("/lustre/scratch117/casm/team154/ji2/OesophagealLongRead/hifiasm_assembly/isoseq_hifiasm_assembly/DESeq2/new/tmp/actachip/split_by_mark_final/nearestSV_differentialPeaks_noCNchange_noSVinteracting_peak.csv")
-nonDifferentialPeaksInput = "{}".format("/lustre/scratch117/casm/team154/ji2/OesophagealLongRead/hifiasm_assembly/isoseq_hifiasm_assembly/DESeq2/new/tmp/actachip/split_by_mark_final/nearestSV_nonDifferentialPeaks_noCNchange_noSVinteracting_peak.csv")
-differentialPeaksOtherInput = "{}".format("/lustre/scratch117/casm/team154/ji2/OesophagealLongRead/hifiasm_assembly/isoseq_hifiasm_assembly/DESeq2/new/tmp/actachip/split_by_mark_final/nearestSV_differential_on_other_allele_Peaks_noCNchange_noSVinteracting_peak.csv")
-nonDifferentialPeaksOtherInput = "{}".format("/lustre/scratch117/casm/team154/ji2/OesophagealLongRead/hifiasm_assembly/isoseq_hifiasm_assembly/DESeq2/new/tmp/actachip/split_by_mark_final/nearestSV_nonDifferential_on_other_allele_Peaks_noCNchange_noSVinteracting_peak.csv")
-
-
 color_dict={}
 color_dict["CTCF"]="black"
 color_dict["H3K27ac"]="orange"
