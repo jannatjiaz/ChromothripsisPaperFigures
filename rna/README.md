@@ -18,15 +18,26 @@ DESeq2 can output the normalised count martrix and this can be used to determine
 
 ## Nearest peak to genes analysis
 
-We wanted to investigate the realationship between chromatin accessibility peaks and genes. For this we determined distance of differential and non-differentail genes to peaks. 
+We wanted to investigate the realationship between chromatin accessibility peaks and genes. For this we determined distance of differential and non-differentail genes to peaks. For example, for differential genes:
 
-> python distanceofgenestopeaks.py  --differential differential --atacchip_diff atacchip_diff --atacchip_nondiff atacchip_nondiff --genes_input_dir genes_input_dir --genes_input_dir genes_input_dir --genes_file_name genes_file_name
+> python distanceofgenestopeaks.py  --differential differential \
+> --atacchip_diff example_inputs/nearestSV_differentialPeaks_noCNchange_noSVinteracting.csv \
+> --atacchip_nondiff example_inputs/nearestSV_nonDifferentialPeaks_noCNchange_noSVinteracting.csv \
+> --genes_input_dir example_inputs --genes_file_name differentialgenes_noCNchange_noSVinteracting.csv 
+> --ensemble_input example_inputs/ensembleGeneID.csv
 
 This scirpt require pandas.
 
+From the output of diffbind you will need to associate peaks with active or repressive marks or CTCF. This can be done using bedtools, for example:
+
+> bedtools closest -a nearestSV_nonDifferentialPeaks.csv -b <(cat macs2/chromothriptic_reads_*_assigned_peaks.narrowPeak macs2/chromothriptic_reads_*_assigned_peaks.broadPeak | cut -f 1,2,3,4) | cut -f 1,2,3,4,5,6,7,8,9,10,11,12,13,17 | cut -f1,2,3,4,5,6 -d "_" | sed 's/chromothriptic_reads_OESO_103_P21_//g' |  sed 's/chromothriptic_reads_OESO_103_P26_//g' | awk '$14=="H3K27me3"' | cut -f 1,2,3,4,5,6,7,8,9,10,11,12,13| sort | uniq > nearestSV_nonDifferentialPeaks_to_inactive_histone_mark.csv
+
+
+
 Once we have determined the distane between peaks and gene, the peaks were split into active and inactive peaks and the distance to genes with a higher, lower and non-differential expression was dertermined using:
 
-> python plotNearestSv_chipatac_distplot.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput --activity active --on_CT on_CT
+> python plotNearestSv_chipatac_distplot.py  --differentialPeaksInput nearestSV_differentialPeaks_to_active_histone_mark.csv \
+> --nonDifferentialPeaksInput nearestSV_nonDifferentialPeaks_to_active_histone_mark.csv --activity active --on_CT higher
 
 This script requires pandas, numpy, math, collections, matplotlib, pylab, scipy and seaborn. 
 
