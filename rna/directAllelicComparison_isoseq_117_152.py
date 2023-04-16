@@ -37,8 +37,8 @@ for chr in range(len(chromosomes)):
     input_sites=[]
     for sample in order:
         s=sample.split("_")[1]
-        input_sites.append("{}{}{}{}{}".format("rna_data/differentialExpression_",chromosome,"_",s,"_filtered_final_recorrected.csv"))        
-        input_counts.append("{}{}{}".format("rna_data/",chromosomes[chr],"_counts_117_152.csv"))
+        input_sites.append("{}{}{}{}{}".format("example_inputs/differentialExpression_",chromosome,"_",s,"_filtered_final_recorrected.csv"))        
+        input_counts.append("{}{}{}".format("example_inputs/",chromosomes[chr],"_counts_117_152.csv"))
     #add the differential gene names to the dictionary
     genes_list=[]
     for sample in range(len(order)):
