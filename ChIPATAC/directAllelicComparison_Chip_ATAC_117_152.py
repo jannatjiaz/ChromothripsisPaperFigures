@@ -29,8 +29,8 @@ for chr in range(len(chromosomes)):
     input_counts=[]
     input_sites=[]
     for sample in order:
-        input_counts.append("{}{}{}{}{}".format("peaks_data/",sample,"_",chromosomes[chr],"_samtools_counts.txt"))
-        input_sites.append("{}{}{}{}{}".format("peaks_data/",sample,"_",chromosomes[chr],"_filtered_final_recorrected.csv"))
+        input_counts.append("{}{}{}{}{}".format("example_inputs/",sample,"_",chromosomes[chr],"_samtools_counts.txt"))
+        input_sites.append("{}{}{}{}{}".format("example_inputs/",sample,"_",chromosomes[chr],"_filtered_final_recorrected.csv"))
     #add the differential gene names to the dictionary
     for sample in range(len(order)):
         peaks = pd.read_csv(input_sites[sample],sep="\t",header=None,skiprows=1)
