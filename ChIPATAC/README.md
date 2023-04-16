@@ -8,7 +8,7 @@ Filtered outputs from DiffBind can be fed directly into allelicFoldChange_Chip_A
 
 > python allelicFoldChange_Chip_ATAC_117_152.py --outputdir outs/
 
-These scirpts require pandas, seaborn, matplotlib, numpy and scipy
+This scirpt require pandas, seaborn, matplotlib, numpy and scipy
 
 ## Normalised read counts plot comparing 117 and 152
 
@@ -47,4 +47,4 @@ We wanted to see which what the effect of distance to SV had on the fold change 
 
 python distance_foldchange_effect.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput
 
-You need matplotlib, math, pandas and numpy.
+This scirpt needs matplotlib, math, pandas and numpy.
