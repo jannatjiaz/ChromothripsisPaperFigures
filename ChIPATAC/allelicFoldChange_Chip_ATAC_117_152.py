@@ -19,7 +19,7 @@ sns.set()
 sns.set_style(style='white') 
 fig, axes = plt.subplots(1, 3, sharex=False, figsize=(9,10))
 
-chromosomes=["chr1","chr6","chr9"]
+chromosomes=["chr6","chr9"]
 
 color_dict = dict({'WTSI-OESO_117':'powderblue',
                   'WTSI-OESO_152':"lightgrey"})
