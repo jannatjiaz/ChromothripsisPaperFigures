@@ -30,7 +30,7 @@ This scirpt require pandas.
 
 From the output of diffbind you will need to associate peaks with active or repressive marks or CTCF. This can be done using bedtools, for example:
 
-> bedtools closest -a nearestSV_nonDifferentialPeaks.csv -b <(cat macs2/chromothriptic_reads_*_assigned_peaks.narrowPeak macs2/chromothriptic_reads_*_assigned_peaks.broadPeak | cut -f 1,2,3,4) | cut -f 1,2,3,4,5,6,7,8,9,10,11,12,13,17 | cut -f1,2,3,4,5,6 -d "_" | sed 's/chromothriptic_reads_OESO_103_P21_//g' |  sed 's/chromothriptic_reads_OESO_103_P26_//g' | awk '$14=="H3K27me3"' | cut -f 1,2,3,4,5,6,7,8,9,10,11,12,13| sort | uniq > nearestSV_nonDifferentialPeaks_to_inactive_histone_mark.csv
+> bedtools closest -a nearestSV_nonDifferentialPeaks.csv -b <(cat macs2/chromothriptic_reads_*_assigned_peaks.narrowPeak macs2/chromothriptic_reads_*_assigned_peaks.broadPeak | cut -f 1,2,3,4) | cut -f 1,2,3,4,5,6,7,8,9,10,11,12,13,17 | sort | uniq > nearestSV_nonDifferentialPeaks_to_inactive_histone_mark.csv
 
 
 
