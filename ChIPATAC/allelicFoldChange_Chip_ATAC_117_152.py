@@ -45,7 +45,7 @@ for chr in range(len(chromosomes)):
         allele=[2,0]
     input_files=[]
     for sample in order:
-        input_files.append("{}{}{}{}{}".format("peaks_data/",sample,"_",chromosome,"_filtered_final_recorrected.csv"))
+        input_files.append("{}{}{}{}{}".format("example_inputs/",sample,"_",chromosome,"_filtered_final_recorrected.csv"))
     #add the differential gene names to the dictionary
     peaks = pd.read_csv(input_files[0],sep="\t",header=None,skiprows=0)
     peaks.columns = ["chr","start","end","width","strand","Conc","Conc_chromothr","Conc_wildtype","Fold","p.value","FDR","new_fdr"]
