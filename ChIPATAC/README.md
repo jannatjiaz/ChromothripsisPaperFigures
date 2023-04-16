@@ -24,20 +24,22 @@ We were interested in determining the nearest SV to each differential and non-di
 
 To determine this for ChIP-seq and ATAC-seq peaks, we used nearestSVpeaks.py:
 > python nearestSVpeaks.py  \
-> --chromothriptic_bedpe data/chromothriptic_SVs_hg38_nogermline.bedpe \
-> --wild_type_bedpe data/wild_type_SVs_hg38_nogermline.bedpe \
-> --diff_peaks data/differentialPeaks.csv \
-> --nondiff_peaks data/nonDifferentialPeaks.csv \
+> --chromothriptic_bedpe example_inputs/chromothriptic_SVs_hg38_nogermline.bedpe \
+> --wild_type_bedpe example_inputs/wild_type_SVs_hg38_nogermline.bedpe \
+> --diff_peaks example_inputs/differentialPeaks.csv \
+> --nondiff_peaks example_inputs/nonDifferentialPeaks.csv \
 > --outputdir outs
 
-This script requires pandas 
+This script requires pandas. The output of this was filtered to remove regions with copy number altereations.
 
 ### plot distance to nearest SV
 
-We wanted to visulaise how far SV where from genes and whether this affected whether the genes were differential or not. For this we used plotNearestSVdistancePeaks.py:
+We wanted to visulaise how far SV where from genes and whether this affected whether the genes were differential or not. For this we used plotNearestSVdistancePeaks.py. For example:
 
-> python plotNearestSv_chipatac_distplot.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput \
-    --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput --on_CT on_CT
+> python plotNearestSv_chipatac_distplot.py  --differentialPeaksInput example_inputs/nearestSV_differentialPeaks_noCNchange_noSVinteracting.csv \
+> --nonDifferentialPeaksInput example_inputs/nearestSV_nonDifferentialPeaks_noCNchange_noSVinteracting.csv \
+> --differentialPeaksOtherInput example_inputs/nearestSV_differential_on_other_allele_Peaks_noCNchange_noSVinteracting.csv \
+> --nonDifferentialPeaksOtherInput example_inputs/nearestSV_nonDifferential_on_other_allele_Peaks_noCNchange_noSVinteracting.csv --on_CT higher
 
 You need seaborn math, pandas, numpy, collections, matplotlib, pylab, scipy and seaborn.
 
