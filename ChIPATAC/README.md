@@ -47,6 +47,9 @@ You need seaborn math, pandas, numpy, collections, matplotlib, pylab, scipy and 
 
 We wanted to see which what the effect of distance to SV had on the fold change difference in peak height. You need a peak file with a column that annotates which peak is assocated which which histone modification. For this we used plotNearestSv_chipatac_distplot.py:
 
-python distance_foldchange_effect.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput --differentialPeaksOtherInput differentialPeaksOtherInput --nonDifferentialPeaksOtherInput nonDifferentialPeaksOtherInput
+> python distance_foldchange_effect.py  --differentialPeaksInput example_inputs/nearestSV_differentialPeaks_noCNchange_noSVinteracting_withpeakinfo.csv \
+> --nonDifferentialPeaksInput example_inputs/nearestSV_nonDifferentialPeaks_noCNchange_noSVinteracting_withpeakinfo.csv \
+> --differentialPeaksOtherInput example_inputs/nearestSV_differential_on_other_allele_Peaks_noCNchange_noSVinteracting_withpeakinfo.csv \
+> --nonDifferentialPeaksOtherInput example_inputs/nearestSV_nonDifferential_on_other_allele_Peaks_noCNchange_noSVinteracting_withpeakinfo.csv
 
 This scirpt needs matplotlib, math, pandas and numpy.
