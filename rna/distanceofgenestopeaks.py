@@ -5,21 +5,21 @@ import math
 
 
 
-parser = argparse.ArgumentParser(description='usage:  distanceofgenestopeaks.py  --differential differential --atacchip_diff atacchip_diff --atacchip_nondiff atacchip_nondiff --genes_input_dir genes_input_dir --genes_input_dir genes_input_dir --genes_file_name genes_file_name')
+parser = argparse.ArgumentParser(description='usage:  distanceofgenestopeaks.py  --differential differential --atacchip_diff atacchip_diff --atacchip_nondiff atacchip_nondiff --genes_input_dir genes_input_dir --genes_input_dir genes_input_dir --genes_file_name genes_file_name --ensemble_input ensemble_input')
 parser.add_argument('--differential', help='differential or nonDifferential',required=True)
 parser.add_argument('--atacchip_diff', help='path to diffferential peaks called from atac and chip-seq reads',required=True)
 parser.add_argument('--atacchip_nondiff', help='path to non-diffferential peaks called from atac and chip-seq reads',required=True)
 parser.add_argument('--genes_input_dir', help='path to directory containing differential and non-differentail genes',required=True)
 parser.add_argument('--genes_file_name ', help='file name for differential or non differential peaks, must match differential perameter',required=True)
+parser.add_argument('--ensemble_input ', help='path to ensemble gene ID file',required=True)
 args = parser.parse_args()
 
-#inputs needed (makes it easier to make this a command line operatable script)
-#mark = "CTCF"
 differential=args.differential
 atacchip_diff=args.atacchip_diff
 atacchip_nondiff=args.atacchip_nondiff
 genes_input_dir=args.genes_input_dir
 genes_file_name=args.genes_file_name
+ensemble_input=args.ensemble_input
 
 genes_input = "{}{}{}".format(genes_input_dir,"/",genes_file_name)
 
