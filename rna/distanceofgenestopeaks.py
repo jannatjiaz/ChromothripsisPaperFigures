@@ -5,7 +5,7 @@ import math
 
 
 
-parser = argparse.ArgumentParser(description='usage:  distanceofgenestopeaks.py  --differential differential --atacchip_diff atacchip_diff')
+parser = argparse.ArgumentParser(description='usage:  distanceofgenestopeaks.py  --differential differential --atacchip_diff atacchip_diff --atacchip_nondiff atacchip_nondiff --genes_input_dir genes_input_dir --genes_input_dir genes_input_dir --genes_file_name genes_file_name')
 parser.add_argument('--differential', help='differential or nonDifferential',required=True)
 parser.add_argument('--atacchip_diff', help='path to diffferential peaks called from atac and chip-seq reads',required=True)
 parser.add_argument('--atacchip_nondiff', help='path to non-diffferential peaks called from atac and chip-seq reads',required=True)
