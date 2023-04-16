@@ -8,7 +8,7 @@ Filtered outputs from DESeq2 can be fed directly into allelicFoldChange_isoseq_1
 
 > python allelicFoldChange_isoseq_117_152.py --outputdir outs/
 
-These scirpts require pandas, seaborn, matplotlib, numpy and scipy
+This scirpt require pandas, seaborn, matplotlib, numpy and scipy
 
 ## Normalised read counts plot comparing 117 and 152
 
@@ -16,8 +16,17 @@ DESeq2 can output the normalised count martrix and this can be used to determine
 
 > python directAllelicComparison_isoseq_117_152.py  --outputdir outs/
 
-## Nearest SV to differential genes
+## Nearest peak to genes analysis
 
-We were interested in investigating the relationship between differential genes and differential peaks. For this peaks were split into active and inactive peaks and the distance to genes with a higher, lower and non-differential expression was dertermined using:
+We wanted to investigate the realationship between chromatin accessibility peaks and genes. For this we determined distance of differential and non-differentail genes to peaks. 
 
-> python distanceofgenestopeaks.py
+> python distanceofgenestopeaks.py  --differential differential --atacchip_diff atacchip_diff --atacchip_nondiff atacchip_nondiff --genes_input_dir genes_input_dir --genes_input_dir genes_input_dir --genes_file_name genes_file_name
+
+This scirpt require pandas.
+
+Once we have determined the distane between peaks and gene, the peaks were split into active and inactive peaks and the distance to genes with a higher, lower and non-differential expression was dertermined using:
+
+> python plotNearestSv_chipatac_distplot.py  --differentialPeaksInput differentialPeaksInput --nonDifferentialPeaksInput nonDifferentialPeaksInput --activity active --on_CT on_CT
+
+This script requires pandas, numpy, math, collections, matplotlib, pylab, scipy and seaborn. 
+
