@@ -5,3 +5,4 @@ Scripts to used for the epigenetic data analysis for the chromothripsis paper. D
 
 - `/ChIPATAC/` contains scripts used to make figures in figure 4
 - `/rna/` contains scripts used to make figures in figure 5
+- `/TADs/` contains scripts used to make figures in figure 6
